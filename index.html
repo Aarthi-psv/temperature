@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celsius to Kelvin Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Celsius to Kelvin Converter</h1>
+        <div class="input-container">
+            <label for="celsius">Celsius:</label>
+            <input type="number" id="celsius" placeholder="Enter temperature in Celsius">
+        </div>
+        <div class="result-container">
+            <p><strong>Result:</strong> <span id="result">0 K</span></p>
+        </div>
+        <button id="convert">Convert</button>
+    </div>
+
+    <script>
+        const celsiusInput = document.getElementById('celsius');
+        const resultSpan = document.getElementById('result');
+        const convertButton = document.getElementById('convert');
+
+        convertButton.addEventListener('click', () => {
+            if (celsiusInput.value !== '') {
+                const celsius = parseFloat(celsiusInput.value);
+                const kelvin = celsius + 273.15;
+                resultSpan.textContent = kelvin.toFixed(2) + " K";
+            } else {
+                resultSpan.textContent = '0 K';
+            }
+        });
+    </script>
+</body>
+</html>
